@@ -23,7 +23,12 @@ class App extends React.Component {
     )
   }
 
+  componentDidMount() {
+    console.log('Executou DidMount');
+  }
+
   render() {
+    console.log('Executou render');
     const MeuComboBox = () => this.criarComboBox()
     
     return (
