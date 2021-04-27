@@ -22,7 +22,7 @@ function App (props) {
   return (
     <>
       <input type="text" value={props.nome} onChange={modificarNome} />
-      <h1>Hello {props.nome} sua idade é {props.idade} isso é um título.</h1>
+      <h1 className="texto-rosa">Hello {props.nome} sua idade é {props.idade} isso é um título.</h1>
       <h2>um subtítulo</h2>      
       <MeuComboBox/>
     </>
