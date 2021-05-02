@@ -46,7 +46,7 @@ export default class ProdutoService {
         else {
             produtos = JSON.parse(produtos);
         }
-
+        
         produtos.push(produto);
 
         localStorage.setItem( PRODUTOS, JSON.stringify(produtos) );

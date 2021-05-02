@@ -19,9 +19,10 @@ class ConsultaProdutos extends React.Component {
         this.setState({ produtos });
     }
 
-    prepararEditar = (sku) => {
-        console.log('sku', sku);
-        this.props.history.push(`/cadastro-produtos/${sku}`);
+    prepararEditar = (sku) => {        
+        //exatamente igual a isso: this.props.history.push('/cadastro-produtos/' + sku); 
+        //outra forma de concatenar
+        this.props.history.push(`/cadastro-produtos/${sku}`);        
     }
 
     render() {
