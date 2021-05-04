@@ -65,11 +65,9 @@ export default class ProdutoService {
             produtos = JSON.parse(produtos);
         }
 
-        const indiceProduto = this.obterIndice(produto.sku);
-        console.log('indiceProduto', indiceProduto);
+        const indiceProduto = this.obterIndice(produto.sku);        
 
-        if(indiceProduto === null) {
-            console.log('passou');
+        if(indiceProduto === null) {            
             produtos.push(produto);
         }
         else {
@@ -78,4 +76,16 @@ export default class ProdutoService {
 
         localStorage.setItem( PRODUTOS, JSON.stringify(produtos) );
     }    
+
+    excluir = (sku) => {
+        const indice = this.obterIndice(sku);
+
+        if(indice !== null) {
+            const produtos = this.obterProdutos();
+            produtos.splice(indice, 1);
+            localStorage.setItem( PRODUTOS, JSON.stringify(produtos) );
+            
+            return produtos;
+        }
+    }
 }

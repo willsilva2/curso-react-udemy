@@ -25,6 +25,11 @@ class ConsultaProdutos extends React.Component {
         this.props.history.push(`/cadastro-produtos/${sku}`);        
     }
 
+    excluir = (sku) => {
+        const produtos = this.service.excluir(sku);
+        this.setState({produtos});
+    }
+
     render() {
         return (
             <div className="card">
@@ -52,8 +57,8 @@ class ConsultaProdutos extends React.Component {
                                         <td>{produto.preco}</td>
                                         <td>{produto.fornecedor}</td>
                                         <td>
-                                            <button className="btn btn-primary" onClick={ () => this.prepararEditar(produto.sku)}>Editar</button>
-                                            <button className="btn btn-danger ml-1">Remover</button>
+                                            <button className="btn btn-primary" onClick={ () => this.prepararEditar(produto.sku) }>Editar</button>
+                                            <button className="btn btn-danger ml-1" onClick={ () => this.excluir(produto.sku) }>Remover</button>
                                         </td>
                                     </tr>
                                 )
